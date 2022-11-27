@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>attributeStyleMap</title>
+</head>
+
+<style>
+   * { font-family: sans-serif }
+</style>
+<script>
+
+function main() {
+
+   let elems = document.querySelectorAll('div');
+
+   for (let elem of elems) {
+
+      let dat = elem.dataset;
+
+      elem.style.position = 'absolute';
+      elem.style.left     =  dat.x;
+      elem.style.top      =  dat.y;
+   }
+}
+
+</script>
+
+<body onload='main()'>
+
+   <div data-x="52px" data-y="81px">Foo</div>
+   <div data-x="69px" data-y="27px">Bar</div>
+   <div data-x="27px" data-y="55px">Baz</div>
+
+</body>
+</html>
