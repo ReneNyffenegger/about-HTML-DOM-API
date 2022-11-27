@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>inert</title>
+</head>
+
+<style>
+
+   div {position: absolute;}
+
+   #one   { left: 20px; top: 10px; height: 90px; width:180px; background-color: coral }
+   #two   { left: 35px; top: 15px; height: 55px; width:125px; background-color: maroon}
+   #three { left: 12px; top: 12px; height: 12px; width: 48px; background-color: tan   }
+
+</style>
+<script>
+
+function main() {
+
+   function printOffsets(id) {
+      console.log(id);
+
+      let elem = document.getElementById(id);
+
+      console.log('  parent:       ' + elem.offsetParent.id                      );
+      console.log('  left/top      ' + elem.offsetLeft  + '@' + elem.offsetTop   );
+      console.log('  width/height: ' + elem.offsetWidth + 'x' + elem.offsetHeight);
+   }
+
+   printOffsets('one'  );
+   printOffsets('two'  );
+   printOffsets('three');
+}
+
+</script>
+
+<body onload='main()' id='body'>
+
+   <div id='one'>
+     <div id='two'>
+        <div id='three'>
+        </div>
+     </div>
+   </div>
+
+</body>
+</html>
