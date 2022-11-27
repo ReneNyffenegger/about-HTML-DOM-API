@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>inert</title>
+</head>
+
+<style>
+   * { font-family: sans-serif }
+</style>
+<script>
+
+function main() {
+   document.getElementById('two').inert = true;
+}
+
+</script>
+
+<body onload='main()'>
+
+   <div id='one'  >This is «normal» text.</div>
+   <div id='two'  >This text becomes <i>inert</i>.</div>
+   <div id='three'>This is normal text, again.</div>
+
+</body>
+</html>
